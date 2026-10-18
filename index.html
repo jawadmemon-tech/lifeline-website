@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LIFELINE — a transparent digital finance and crypto education concept.">
+  <title>LIFELINE | Build With Clarity</title>
+  <style>
+    :root{--green:#0b8f63;--deep:#063f31;--mint:#e8f8f0;--ink:#152820;--muted:#65766e;--line:#dce9e2;--white:#fff;--gold:#f3bd55}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#f8fbf9;line-height:1.55}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1.8px;font-size:1.25rem;color:var(--deep)}
+    .logo{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--deep));color:white;font-size:1.25rem}
+    nav{display:flex;gap:25px;align-items:center;color:#53665c;font-size:.94rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:12px 18px;background:var(--green);color:#fff;font-weight:750;cursor:pointer;box-shadow:0 8px 18px #0b8f6322}
+    .btn.secondary{background:white;color:var(--deep);border:1px solid var(--line);box-shadow:none}
+    .hero{padding:76px 0 56px;background:radial-gradient(circle at 84% 18%,#c7f1d9 0,transparent 27%),linear-gradient(135deg,#f7fcf9,#eaf8f0)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #bde7ce;background:#f4fff8;border-radius:99px;padding:7px 12px;font-size:.82rem;color:var(--deep);font-weight:750}
+    h1{font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.04;letter-spacing:-2px;margin:22px 0}
+    h1 span{color:var(--green)}.lead{font-size:1.12rem;color:var(--muted);max-width:590px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .note{font-size:.82rem;color:#6d7c74;margin-top:16px}
+    .mock-card{background:#fff;border:1px solid #d7e9de;border-radius:24px;padding:24px;box-shadow:0 24px 70px #0a65401a;transform:rotate(1deg)}
+    .card-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.86rem}
+    .balance{font-size:2.25rem;font-weight:850;letter-spacing:-1px;margin:16px 0 2px}.demo-label{font-size:.75rem;background:#fff3d9;color:#8c5b05;border-radius:8px;padding:5px 8px;font-weight:800}
+    .chart{height:120px;margin:22px 0 15px;border-radius:14px;background:linear-gradient(180deg,#d9f6e5,transparent);position:relative;overflow:hidden}
+    .chart svg{width:100%;height:100%}.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#f5faf7;border:1px solid var(--line);border-radius:13px;padding:13px}.mini small{color:var(--muted)}.mini strong{display:block;font-size:1.05rem;margin-top:4px}
+    section{padding:70px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 34px}.section-head h2{font-size:clamp(1.9rem,3vw,2.7rem);letter-spacing:-1px;margin:0 0 12px}.section-head p{color:var(--muted);margin:0}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:white;border:1px solid var(--line);border-radius:18px;padding:24px}.icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:var(--mint);font-size:1.3rem}.feature h3{margin:16px 0 7px}.feature p{color:var(--muted);margin:0;font-size:.95rem}
+    .plans{background:#f0f8f3}.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.plan{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column}.plan.featured{border:2px solid var(--green);box-shadow:0 14px 35px #0b8f6315}.plan .tag{font-size:.75rem;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:1px}.plan h3{font-size:1.25rem;margin:8px 0}.plan p{color:var(--muted);font-size:.92rem}.plan ul{padding-left:19px;color:#43564b;font-size:.92rem;flex:1}.plan li{margin:8px 0}.plan .btn{margin-top:10px}
+    .warning{border:1px solid #f0d59b;background:#fff8e8;color:#704f17;padding:17px 18px;border-radius:14px;margin-top:22px;font-size:.92rem}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line)}.num{font-size:.8rem;color:var(--green);font-weight:900;letter-spacing:1px}
+    .cta{background:linear-gradient(130deg,var(--deep),#0a7955);color:#fff;border-radius:24px;padding:38px;display:flex;align-items:center;justify-content:space-between;gap:24px}.cta p{color:#d5eee1;margin-bottom:0}.cta h2{margin:0;font-size:2rem}
+    footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .modal-backdrop{display:none;position:fixed;inset:0;background:#071c14aa;z-index:20;align-items:center;justify-content:center;padding:18px}.modal{width:min(440px,100%);background:white;border-radius:20px;padding:26px;box-shadow:0 20px 80px #0003}.modal h2{margin-top:0}.modal input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:7px 0 12px;font:inherit}.modal .close{float:right;background:#eef5f0;border:0;border-radius:8px;padding:6px 10px;cursor:pointer}.smallprint{font-size:.78rem;color:var(--muted)}
+    @media(max-width:800px){nav a:not(.btn){display:none}.hero-grid{grid-template-columns:1fr}.mock-card{transform:none}.features,.plan-grid,.steps{grid-template-columns:1fr}.hero{padding-top:50px}.cta{align-items:flex-start;flex-direction:column}.nav{height:68px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="logo">✦</span> LIFELINE</a>
+    <nav>
+      <a href="#how">How it works</a><a href="#plans">Plans</a><a href="#risk">Risk notice</a>
+      <button class="btn" onclick="openModal()">Join the waitlist</button>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">✦ Built for clarity, not promises</div>
+        <h1>A smarter way to understand <span>digital finance.</span></h1>
+        <p class="lead">LIFELINE is a planned digital-finance platform focused on transparent records, learning resources, and responsible decision-making around crypto markets.</p>
+        <div class="hero-actions"><button class="btn" onclick="openModal()">Get launch updates</button><a class="btn secondary" href="#plans">Explore platform</a></div>
+        <p class="note">Early-access concept • Pakistan Rupee (PKR) display • No deposits accepted on this website.</p>
+      </div>
+      <div class="mock-card" aria-label="Sample dashboard preview">
+        <div class="card-top"><span>Account overview</span><span class="demo-label">SAMPLE UI</span></div>
+        <div class="balance">Rs. 0.00</div><div style="color:#718177;font-size:.85rem">Demo balance · not real funds</div>
+        <div class="chart">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,98 C35,88 42,105 75,76 S126,88 158,57 S208,78 245,40 S299,59 330,27 S370,35 400,12 L400,120 L0,120Z" fill="#b8ebcc" opacity=".75"/><path d="M0,98 C35,88 42,105 75,76 S126,88 158,57 S208,78 245,40 S299,59 330,27 S370,35 400,12" fill="none" stroke="#0b8f63" stroke-width="3"/></svg>
+        </div>
+        <div class="mini-stats"><div class="mini"><small>Active packages</small><strong>0</strong></div><div class="mini"><small>Recorded transactions</small><strong>0</strong></div></div>
+        <p class="smallprint">Illustrative interface only. No account or balance is created.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><h2>Designed around transparency</h2><p>Before any financial product launches, users should understand how it works, what fees apply, and what could go wrong.</p></div>
+      <div class="features">
+        <article class="feature"><div class="icon">📊</div><h3>Clear records</h3><p>A planned dashboard for viewing account activity and transaction history without confusing numbers or hidden terms.</p></article>
+        <article class="feature"><div class="icon">🧭</div><h3>Learn before you act</h3><p>Plain-language resources to help users understand crypto volatility, custody, fees, and risk.</p></article>
+        <article class="feature"><div class="icon">🔐</div><h3>Security first</h3><p>Real accounts and payments require secure authentication, protected data, audited logic, and appropriate compliance checks.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans" id="plans">
+    <div class="wrap">
+      <div class="section-head"><h2>Platform options</h2><p>These are proposed product areas, not live investment offers. No funds are being collected.</p></div>
+      <div class="plan-grid">
+        <article class="plan"><span class="tag">Learn</span><h3>Crypto Basics</h3><p>Build a foundation before risking money.</p><ul><li>Market volatility overview</li><li>Wallet and custody basics</li><li>Common scam warning signs</li></ul><button class="btn secondary" onclick="openModal()">Get updates</button></article>
+        <article class="plan featured"><span class="tag">Track</span><h3>Portfolio Journal</h3><p>Keep a record of your own decisions.</p><ul><li>Manual portfolio tracking</li><li>PKR value notes</li><li>Transaction journal template</li></ul><button class="btn" onclick="openModal()">Get updates</button></article>
+        <article class="plan"><span class="tag">Explore</span><h3>Market Research</h3><p>Understand risks and research methods.</p><ul><li>Research checklist</li><li>Fee and risk comparisons</li><li>No promised or fixed returns</li></ul><button class="btn secondary" onclick="openModal()">Get updates</button></article>
+      </div>
+      <div class="warning" id="risk"><strong>Important risk notice:</strong> Crypto assets are volatile and you can lose some or all of the money you invest. LIFELINE does not currently accept deposits, offer investment packages, or promise daily returns. Any future financial service must be reviewed for applicable Pakistani laws, licensing, custody, disclosures, and payment-provider requirements before launch.</div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head"><h2>How the launch journey works</h2><p>Build trust first, then add features only when they can be operated safely and lawfully.</p></div>
+      <div class="steps">
+        <article class="step"><div class="num">STEP 01</div><h3>Share launch interest</h3><p>Visitors can register interest for product updates. This demo form does not collect or store information.</p></article>
+        <article class="step"><div class="num">STEP 02</div><h3>Build the secure platform</h3><p>Set up a real backend, database, account security, privacy terms, and independent testing.</p></article>
+        <article class="step"><div class="num">STEP 03</div><h3>Review before launch</h3><p>Confirm the business model, applicable legal permissions, risk disclosures, and any payment-provider approvals.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="cta"><div><h2>Start with clarity.</h2><p>Join the LIFELINE launch-update list when registration is connected.</p></div><button class="btn secondary" onclick="openModal()">Join the waitlist</button></div></div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><div><strong style="color:var(--deep)">LIFELINE</strong> · Digital finance concept</div><div>© <span id="year"></span> LIFELINE. All rights reserved.</div><div>Demo website · No financial services currently offered</div></div></footer>
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal"><button class="close" onclick="closeModal()" aria-label="Close">✕</button><h2 id="modalTitle">Get launch updates</h2><p>Registration is not connected yet. This demo does not send or store your details.</p>
+    <form onsubmit="event.preventDefault(); alert('Thanks! This demo form is not connected yet, so no information was sent or saved.'); closeModal();">
+      <label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Your name" required>
+      <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <button class="btn" type="submit" style="width:100%">Register interest</button>
+    </form><p class="smallprint">Do not enter passwords, payment details, wallet recovery phrases, or sensitive financial information.</p>
+  </div>
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function openModal(){document.getElementById('modal').style.display='flex'}
+  function closeModal(){document.getElementById('modal').style.display='none'}
+  document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
